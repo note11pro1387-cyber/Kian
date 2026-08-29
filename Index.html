@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>کیان | تعمیر تخصصی موبایل در مشهد</title>
+  <meta name="description" content="تعمیر تخصصی موبایل در مشهد با بیش از ۱۰ سال تجربه؛ تعمیر برد، تعویض نمایشگر، باتری و سوکت شارژ. رسالت ۶۴، قائم ۱۵. تماس مستقیم: ۰۹۰۳۶۹۰۷۷۳۳">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#08090b">
+  <link rel="icon" href="data:,">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:site_name" content="کیان | تعمیر تخصصی موبایل">
+  <meta property="og:title" content="کیان | تعمیر تخصصی موبایل در مشهد">
+  <meta property="og:description" content="تعمیر تخصصی موبایل در مشهد؛ تشخیص دقیق، سپس تعمیر. برد، نمایشگر، باتری، شارژ.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="کیان | تعمیر تخصصی موبایل در مشهد">
+  <meta name="twitter:description" content="اول تشخیص، بعد تعمیر. تعمیر تخصصی موبایل در مشهد.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>.preloader,.scroll-progress,.cursor-dot,.cursor-ring{display:none!important}</style></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobilePhoneStore",
+    "name": "موبایل کیان",
+    "alternateName": "KIAN Mobile Repair",
+    "telephone": "+98903 690 7733",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "رسالت ۶۴، قائم ۱۵",
+      "addressLocality": "مشهد",
+      "addressRegion": "خراسان رضوی",
+      "addressCountry": "IR"
+    },
+    "areaServed": "مشهد",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "14:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "17:00", "closes": "22:00" }
+    ]
+  }
+  </script>
+
+  <!-- GSAP + ScrollTrigger: optional enhancement, site works without them -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js" defer crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js" defer crossorigin="anonymous"></script>
+</head>
+<body>
+  <a class="skip-link" href="#home">پرش به محتوای اصلی</a>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <div class="preloader" id="preloader" role="status" aria-live="polite">
+    <div class="preloader__inner">
+      <span class="sr-only">در حال بارگذاری کیان</span>
+      <div class="preloader__brand" aria-hidden="true">KIAN</div>
+      <div class="preloader__scan" aria-hidden="true"></div>
+      <div class="preloader__meta" aria-hidden="true">
+        <span>DIAGNOSTIC LINE</span>
+        <span id="preloaderPercent">00%</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a href="#home" class="brand" aria-label="کیان، رفتن به ابتدای صفحه">
+        <span class="brand__mark" aria-hidden="true">K</span>
+        <span class="brand__word">KIAN</span>
+        <span class="brand__sub">MOBILE REPAIR</span>
+      </a>
+      <nav class="desktop-nav" aria-label="ناوبری اصلی">
+        <a href="#services">خدمات</a>
+        <a href="#about">درباره</a>
+        <a href="#process">فرآیند</a>
+        <a href="#gallery">گالری</a>
+        <a href="#contact">تماس</a>
+      </nav>
+      <a class="header-call" href="tel:+989036907733">
+        <span>۰۹۰۳ ۶۹۰ ۷۷۳۳</span>
+        <span class="header-call__arrow" aria-hidden="true">↗</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="باز کردن منو">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
+    <div class="mobile-menu__backdrop" data-menu-close></div>
+    <h2 id="mobileMenuTitle" class="sr-only">منوی ناوبری</h2>
+    <div class="mobile-menu__content">
+      <div class="mobile-menu__topline" aria-hidden="true">
+        <span>KIAN / MENU</span>
+        <span>مشهد</span>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="ناوبری موبایل">
+        <a href="#services" data-menu-close><span>01</span><b>خدمات</b><i aria-hidden="true">↗</i></a>
+        <a href="#about" data-menu-close><span>02</span><b>درباره</b><i aria-hidden="true">↗</i></a>
+        <a href="#process" data-menu-close><span>03</span><b>فرآیند</b><i aria-hidden="true">↗</i></a>
+        <a href="#gallery" data-menu-close><span>04</span><b>گالری</b><i aria-hidden="true">↗</i></a>
+        <a href="#contact" data-menu-close><span>05</span><b>تماس</b><i aria-hidden="true">↗</i></a>
+      </nav>
+      <div class="mobile-menu__footer">
+        <a href="tel:+989036907733">۰۹۰۳ ۶۹۰ ۷۷۳۳</a>
+        <span>۱۰–۱۴ / ۱۷–۲۲</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="home">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="معرفی کیان">
+      <div class="hero__media">
+        <div class="hero__image-fallback" aria-hidden="true"></div>
+        <img class="hero__image"
+             src="assets/images/hero.webp"
+             data-fallback="https://images.unsplash.com/photo-1588515603068-adb330f26e92?auto=format&fit=crop&w=1800&q=70"
+             alt="فضای کار تعمیر موبایل کیان"
+             fetchpriority="high" decoding="async">
+        <div class="hero__grain" aria-hidden="true"></div>
+      </div>
+      <div class="hero__ambient hero__ambient--one" aria-hidden="true" data-ambient="one"></div>
+      <div class="hero__ambient hero__ambient--two" aria-hidden="true" data-ambient="two"></div>
+      <div class="hero__grid" aria-hidden="true" data-parallax-grid></div>
+      <div class="hero__scanline" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow hero__eyebrow reveal-hero"><span class="eyebrow__dot" aria-hidden="true"></span>KIAN MOBILE REPAIR</p>
+          <h1 class="hero__title reveal-hero">
+            تعمیر تخصصی موبایل <span class="hero__title-accent">در مشهد</span>، با دقتی که می‌شود روی آن حساب کرد.
+          </h1>
+          <p class="hero__lead reveal-hero">
+            از عیب‌یابی و تعمیرات تخصصی برد تا تعویض نمایشگر، سوکت شارژ، باتری و رفع مشکلات نرم‌افزاری؛
+            موبایل کیان تلاش می‌کند برای هر دستگاه، ابتدا ایراد را درست تشخیص دهد و سپس بهترین راه‌حل را پیشنهاد کند.
+          </p>
+          <div class="hero__actions reveal-hero">
+            <a href="tel:+989036907733" class="btn btn--primary btn--large">
+              <span>تماس مستقیم</span><span class="btn__line" aria-hidden="true"></span>
+            </a>
+            <a href="#services" class="btn btn--ghost btn--large">
+              <span>مشاهده خدمات</span>
+            </a>
+          </div>
+          <p class="hero__local reveal-hero">
+            <span>مشهد</span><span aria-hidden="true">·</span><span>رسالت ۶۴</span><span aria-hidden="true">·</span><span>قائم ۱۵</span>
+          </p>
+        </div>
+
+        <aside class="hero__side reveal-hero" aria-label="تجربه کاری">
+          <span class="hero__side-label">EXPERIENCE</span>
+          <div class="hero__experience">
+            <span class="hero__experience-number">۱۰+</span>
+            <span>سال تجربه<br>تعمیر تخصصی موبایل</span>
+          </div>
+          <div class="hero__side-rule" aria-hidden="true"></div>
+          <p class="hero__side-note"><span>سجاد نصرتی</span><br>تعمیرکار متخصص موبایل</p>
+        </aside>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
+        <span>SCROLL</span>
+      </div>
+    </section>
+
+    <!-- TRUST BAND -->
+    <section class="trust-band" aria-label="نکات اعتماد">
+      <div class="container">
+        <div class="trust-band__track">
+          <div><span>01</span><strong>۱۰+ سال تجربه</strong></div>
+          <div><span>02</span><strong>تعمیر تخصصی برد</strong></div>
+          <div><span>03</span><strong>چند برند موبایل</strong></div>
+          <div><span>04</span><strong>ارتباط مستقیم</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="section philosophy" aria-label="فلسفه تعمیر">
+      <div class="container philosophy__grid">
+        <div class="philosophy__copy">
+          <p class="eyebrow reveal-item">01 / PHILOSOPHY</p>
+          <h2 class="display-title display-title--light reveal-item">
+            تعمیر فقط <span>تعویض قطعه</span> نیست.
+          </h2>
+          <p class="body-copy body-copy--light reveal-item">
+            خیلی از ایرادهای موبایل با تعویض عجولانه قطعه برطرف نمی‌شوند؛ گاهی مشکل جای دیگری است.
+            در کیان، قبل از هر تصمیمی، ابتدا مسیر دقیق ایراد بررسی می‌شود.
+          </p>
+          <div class="quote-line reveal-item">
+            <span aria-hidden="true"></span>
+            <strong>اول تشخیص، بعد تعمیر.</strong>
+          </div>
+        </div>
+        <div class="image-frame reveal-item">
+          <div class="image-frame__fallback" aria-hidden="true">PRECISION<br>OVER GUESSING</div>
+          <img src="assets/images/philosophy.webp"
+               data-fallback="https://images.unsplash.com/photo-1684430598409-750ae3284704?auto=format&fit=crop&w=1200&q=70"
+               alt="نمای نزدیک از برد و قطعات میکرو موبایل" loading="lazy" decoding="async">
+          <div class="image-frame__meta" aria-hidden="true">
+            <span>PCB / MACRO</span>
+            <span>01</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICIAN / ABOUT -->
+    <section class="section technician" id="about" aria-label="درباره تعمیرکار">
+      <div class="container">
+        <div class="technician__header">
+          <p class="eyebrow reveal-item">02 / THE TECHNICIAN</p>
+          <a href="#contact" class="btn btn--small reveal-item">هماهنگی مراجعه</a>
+        </div>
+        <div class="technician__layout">
+          <div class="portrait-frame reveal-item">
+            <div class="portrait-frame__fallback" aria-hidden="true"><span>SAJJAD</span><br><b>SN</b></div>
+            <img src="assets/images/technician.webp"
+                 data-fallback="https://images.unsplash.com/photo-1560846389-8c7e1d88eca8?auto=format&fit=crop&w=1000&q=70"
+                 alt="سجاد نصرتی در حال تعمیر موبایل در محل کار" loading="lazy" decoding="async">
+            <span class="portrait-frame__tag" aria-hidden="true">WORKSHOP / MASHHAD</span>
+          </div>
+          <div class="technician__copy">
+            <h2 class="display-title display-title--large reveal-item">سجاد نصرتی</h2>
+            <p class="technician__role reveal-item">تعمیرکار متخصص موبایل</p>
+            <div class="technician__experience reveal-item">
+              <span>۱۰+</span>
+              <div>سال تجربه<br>حرفه‌ای</div>
+            </div>
+            <p class="body-copy reveal-item">
+              سال‌هاست کار روزانه من تشخیص و تعمیر موبایل است؛ از ایرادهای ساده نرم‌افزاری تا تعمیرات ریز سطح برد.
+              هر دستگاه قبل از هر اقدامی بررسی می‌شود تا راه‌حل درست، نه صرفاً سریع‌ترین راه‌حل، انتخاب شود.
+            </p>
+            <div class="technician__signature reveal-item">
+              <span>سجاد نصرتی</span>
+              <small>MOBILE REPAIR SPECIALIST</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section process" id="process" aria-label="فرآیند تعمیر">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-item">03 / PROCESS</p>
+          <h2 class="display-title reveal-item">از مشکل تا راه‌حل، <span>مرحله به مرحله.</span></h2>
+        </div>
+        <div class="process-timeline" id="processTimeline" role="list">
+          <div class="process-timeline__line" aria-hidden="true"><span id="processLine"></span></div>
+          <div class="process-step reveal-item" role="listitem" data-step>
+            <span class="process-step__marker" aria-hidden="true"></span>
+            <div class="process-step__body">
+              <span class="process-step__num">01</span>
+              <h3>بررسی</h3>
+              <p>دریافت دستگاه و شنیدن دقیق شرح مشکل از مشتری.</p>
+            </div>
+          </div>
+          <div class="process-step reveal-item" role="listitem" data-step>
+            <span class="process-step__marker" aria-hidden="true"></span>
+            <div class="process-step__body">
+              <span class="process-step__num">02</span>
+              <h3>تشخیص</h3>
+              <p>عیب‌یابی دقیق فنی برای پیدا کردن ریشه واقعی ایراد.</p>
+            </div>
+          </div>
+          <div class="process-step reveal-item" role="listitem" data-step>
+            <span class="process-step__marker" aria-hidden="true"></span>
+            <div class="process-step__body">
+              <span class="process-step__num">03</span>
+              <h3>راه‌حل</h3>
+              <p>پیشنهاد بهترین گزینه تعمیر، متناسب با وضعیت دستگاه.</p>
+            </div>
+          </div>
+          <div class="process-step reveal-item" role="listitem" data-step>
+            <span class="process-step__marker" aria-hidden="true"></span>
+            <div class="process-step__body">
+              <span class="process-step__num">04</span>
+              <h3>تعمیر</h3>
+              <p>اجرای دقیق تعمیر با ابزار و قطعات مناسب.</p>
+            </div>
+          </div>
+          <div class="process-step reveal-item" role="listitem" data-step>
+            <span class="process-step__marker" aria-hidden="true"></span>
+            <div class="process-step__body">
+              <span class="process-step__num">05</span>
+              <h3>تحویل</h3>
+              <p>بررسی نهایی و تحویل دستگاه سالم به مشتری.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services" aria-label="خدمات">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow reveal-item">04 / SERVICES</p>
+            <h2 class="display-title reveal-item">خدمات <span>تعمیر تخصصی</span></h2>
+          </div>
+          <p class="body-copy section-head__aside reveal-item">
+            فهرست زیر را می‌توانید مرور کنید؛ با کلیک یا لمس هر ردیف، جزئیات همان خدمت را ببینید.
+          </p>
+        </div>
+
+        <div class="services__interactive">
+          <div class="services__list" id="servicesList" role="list">
+            <button type="button" class="service-row is-active reveal-item" data-service="display" aria-expanded="true">
+              <span class="service-row__index">01</span>
+              <span class="service-row__main">
+                <b>نمایشگر</b>
+                <small>LCD / OLED / TOUCH</small>
+                <span class="service-row__detail">تعویض نمایشگر، تاچ و بررسی مشکلات تصویر با تست دقیق پس از تعویض.</span>
+              </span>
+              <span class="service-row__arrow" aria-hidden="true">↗</span>
+            </button>
+            <button type="button" class="service-row reveal-item" data-service="charging" aria-expanded="false">
+              <span class="service-row__index">02</span>
+              <span class="service-row__main">
+                <b>شارژ و تغذیه</b>
+                <small>CHARGING / PORT</small>
+                <span class="service-row__detail">تعمیر و تعویض سوکت شارژ، آی‌سی شارژ و رفع مشکلات عدم شارژ شدن.</span>
+              </span>
+              <span class="service-row__arrow" aria-hidden="true">↗</span>
+            </button>
+            <button type="button" class="service-row reveal-item" data-service="board" aria-expanded="false">
+              <span class="service-row__index">03</span>
+              <span class="service-row__main">
+                <b>تعمیر برد</b>
+                <small>BOARD / SMD</small>
+                <span class="service-row__detail">عیب‌یابی و تعمیر تخصصی برد در سطح قطعات SMD و مسیرهای ریز.</span>
+              </span>
+              <span class="service-row__arrow" aria-hidden="true">↗</span>
+            </button>
+            <button type="button" class="service-row reveal-item" data-service="battery" aria-expanded="false">
+              <span class="service-row__index">04</span>
+              <span class="service-row__main">
+                <b>باتری</b>
+                <small>BATTERY</small>
+                <span class="service-row__detail">تعویض باتری اصل با تست ظرفیت واقعی و ۶ ماه ضمانت.</span>
+              </span>
+              <span class="service-row__arrow" aria-hidden="true">↗</span>
+            </button>
+            <button type="button" class="service-row reveal-item" data-service="camera" aria-expanded="false">
+              <span class="service-row__index">05</span>
+              <span class="service-row__main">
+                <b>دوربین</b>
+                <small>CAMERA MODULE</small>
+                <span class="service-row__detail">تعمیر و تعویض ماژول دوربین و رفع مشکلات فوکوس و افکت لرزش تصویر.</span>
+              </span>
+              <span class="service-row__arrow" aria-hidden="true">↗</span>
+            </button>
+            <button type="button" class="service-row reveal-item" data-service="water" aria-expanded="false">
+              <span class="service-row__index">06</span>
+              <span class="service-row__main">
+                <b>آب‌خوردگی</b>
+                <small>LIQUID DAMAGE</small>
+                <span class="service-row__detail">شستشوی تخصصی برد، بررسی خوردگی و بازیابی دستگاه پس از آب‌خوردگی.</span>
+              </span>
+              <span class="service-row__arrow" aria-hidden="true">↗</span>
+            </button>
+            <button type="button" class="service-row reveal-item" data-service="software" aria-expanded="false">
+              <span class="service-row__index">07</span>
+              <span class="service-row__main">
+                <b>نرم‌افزاری</b>
+                <small>SOFTWARE / OS</small>
+                <span class="service-row__detail">رفع مشکلات نرم‌افزاری، هنگ کردن، ریست و به‌روزرسانی سیستم‌عامل.</span>
+              </span>
+              <span class="service-row__arrow" aria-hidden="true">↗</span>
+            </button>
+            <button type="button" class="service-row reveal-item" data-service="frame" aria-expanded="false">
+              <span class="service-row__index">08</span>
+              <span class="service-row__main">
+                <b>بدنه و شاسی</b>
+                <small>FRAME / HOUSING</small>
+                <span class="service-row__detail">تعویض بدنه، شاسی و دکمه‌های فیزیکی آسیب‌دیده دستگاه.</span>
+              </span>
+              <span class="service-row__arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <div class="services__preview" id="servicesPreview" aria-hidden="true">
+            <div class="services__preview-image" id="servicesPreviewImage"></div>
+            <div class="services__preview-fallback">
+              <span id="servicePreviewIndex">01</span>
+              <b id="servicePreviewTitle">نمایشگر</b>
+              <small id="servicePreviewDescription">تعویض نمایشگر، تاچ و بررسی مشکلات تصویر با تست دقیق پس از تعویض.</small>
+            </div>
+            <div class="services__preview-meta">
+              <span>KIAN / SERVICE</span>
+              <span id="servicePreviewCode">DISPLAY</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="warranty-inline reveal-item">
+          <span class="warranty-inline__num">۶</span>
+          <div>
+            <strong>ضمانت باتری</strong>
+            <p>باتری‌های تعویض‌شده دارای ۶ ماه ضمانت هستند.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section class="brands" aria-label="برندهای پشتیبانی‌شده">
+      <div class="container brands__head">
+        <p class="eyebrow reveal-item">05 / BRANDS</p>
+        <h2 class="display-title reveal-item">تخصص محدود به <span>یک برند نیست.</span></h2>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track" id="marqueeTrackOne">
+          <span>SAMSUNG</span><i>●</i><span>APPLE</span><i>●</i><span>XIAOMI</span><i>●</i><span>HUAWEI</span><i>●</i><span>NOKIA</span><i>●</i><span>ONEPLUS</span><i>●</i>
+          <span>SAMSUNG</span><i>●</i><span>APPLE</span><i>●</i><span>XIAOMI</span><i>●</i><span>HUAWEI</span><i>●</i><span>NOKIA</span><i>●</i><span>ONEPLUS</span><i>●</i>
+        </div>
+      </div>
+      <div class="marquee marquee--two" aria-hidden="true">
+        <div class="marquee__track" id="marqueeTrackTwo">
+          <span>DISPLAY</span><span>BATTERY</span><span>BOARD LEVEL</span><span>CHARGING</span><span>CAMERA</span><span>SOFTWARE</span>
+          <span>DISPLAY</span><span>BATTERY</span><span>BOARD LEVEL</span><span>CHARGING</span><span>CAMERA</span><span>SOFTWARE</span>
+        </div>
+      </div>
+      <div class="container">
+        <p class="brands__note">فهرست بالا نمونه‌ای از برندهای رایج است؛ برای اطمینان از پشتیبانی مدل خاص خود پیش از مراجعه تماس بگیرید.</p>
+      </div>
+    </section>
+
+    <!-- SPECIALIZED -->
+    <section class="specialized" aria-label="تعمیرات تخصصی برد">
+      <div class="specialized__media">
+        <div class="specialized__fallback" aria-hidden="true"></div>
+        <img src="assets/images/specialized.webp"
+             data-fallback="https://images.unsplash.com/photo-1563770660834-82b48f27ec9d?auto=format&fit=crop&w=1600&q=70"
+             alt="تعمیر تخصصی برد در سطح قطعات ریز" loading="lazy" decoding="async">
+      </div>
+      <div class="specialized__overlay" aria-hidden="true"></div>
+      <div class="specialized__scan" aria-hidden="true" data-scanline></div>
+      <div class="container">
+        <div class="specialized__content">
+          <p class="eyebrow reveal-item">06 / BOARD LEVEL</p>
+          <h2 class="display-title reveal-item">
+            وقتی مشکل، فقط <span>یک تعویض ساده نیست.</span>
+          </h2>
+          <p class="body-copy body-copy--light reveal-item">
+            برخی ایرادها به سطح برد و قطعات ریز مربوط می‌شوند. این نوع تعمیر به ابزار دقیق، تجربه و صبر نیاز دارد.
+          </p>
+          <div class="tag-row reveal-item">
+            <span>BOARD</span><span>LEVEL</span><span>REPAIR</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY KIAN -->
+    <section class="section why-kian" aria-label="چرا کیان">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-item">07 / WHY KIAN</p>
+          <h2 class="display-title reveal-item">چرا <span>موبایل کیان؟</span></h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-item reveal-item"><span>01</span><div><h3>تشخیص دقیق</h3><p>قبل از هر تعمیر، ریشه واقعی مشکل بررسی می‌شود.</p></div><em aria-hidden="true">↗</em></div>
+          <div class="why-item reveal-item"><span>02</span><div><h3>۱۰+ سال تجربه</h3><p>سال‌ها تجربه عملی در تعمیر انواع موبایل.</p></div><em aria-hidden="true">↗</em></div>
+          <div class="why-item reveal-item"><span>03</span><div><h3>توجه به جزئیات</h3><p>هر تعمیر با دقت و بررسی نهایی انجام می‌شود.</p></div><em aria-hidden="true">↗</em></div>
+          <div class="why-item reveal-item"><span>04</span><div><h3>ارتباط مستقیم</h3><p>پاسخ‌گویی مستقیم بدون واسطه‌های غیرضروری.</p></div><em aria-hidden="true">↗</em></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASSIC PHONES -->
+    <section class="classic" aria-label="گوشی‌های کلاسیک">
+      <div class="classic__media" data-parallax-classic>
+        <div class="classic__fallback" aria-hidden="true">CLASSIC</div>
+        <img src="assets/images/classic-phones.webp"
+             data-fallback="https://images.unsplash.com/photo-1712600096342-0445dbb13c20?auto=format&fit=crop&w=1400&q=68"
+             alt="گوشی موبایل کلاسیک و قدیمی" loading="lazy" decoding="async">
+      </div>
+      <div class="classic__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="classic__content">
+          <p class="eyebrow reveal-item">08 / CLASSIC</p>
+          <h2 class="display-title reveal-item">
+            بعضی گوشی‌ها هنوز <span>ارزش ماندن دارند.</span>
+          </h2>
+          <p class="body-copy body-copy--light reveal-item">
+            گوشی‌های قدیمی هم در کیان بررسی و در صورت امکان تعمیر می‌شوند؛ برخی از این دستگاه‌ها ارزش نگه‌داشتن دارند.
+          </p>
+          <a href="#contact" class="text-link reveal-item"><span>در مورد گوشی قدیمی خود مشورت بگیرید</span> ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery" id="gallery" aria-label="گالری کیان">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-item">09 / GALLERY</p>
+          <h2 class="display-title reveal-item">بخشی از فضای واقعی <span>کیان</span></h2>
+          <p class="body-copy reveal-item">محیط کار، ابزارها و نمونه‌هایی از فرآیند تعمیرات.</p>
+        </div>
+
+        <div class="gallery__filters" role="group" aria-label="فیلتر گالری" id="galleryFilters">
+          <button type="button" data-filter="all" aria-pressed="true">همه</button>
+          <button type="button" data-filter="shop" aria-pressed="false">مغازه</button>
+          <button type="button" data-filter="repair" aria-pressed="false">تعمیرات</button>
+          <button type="button" data-filter="tools" aria-pressed="false">ابزار</button>
+        </div>
+
+        <div class="gallery__grid" id="galleryGrid">
+          <button type="button" class="gallery-item gallery-item--a reveal-item" data-category="shop" data-index="0">
+            <span class="gallery-item__fallback" aria-hidden="true">01</span>
+            <img src="assets/images/shop-01.webp"
+                 data-fallback="https://images.unsplash.com/photo-1712600096342-0445dbb13c20?auto=format&fit=crop&w=900&q=68"
+                 data-full="assets/images/shop-01.webp"
+                 data-full-fallback="https://images.unsplash.com/photo-1712600096342-0445dbb13c20?auto=format&fit=crop&w=1600&q=75"
+                 alt="نمای فضای مغازه کیان" loading="lazy" decoding="async">
+            <span class="gallery-item__caption">01 / WORKSHOP</span>
+          </button>
+          <button type="button" class="gallery-item gallery-item--b reveal-item" data-category="repair" data-index="1">
+            <span class="gallery-item__fallback" aria-hidden="true">02</span>
+            <img src="assets/images/repair-01.webp"
+                 data-fallback="https://images.unsplash.com/photo-1588515603068-adb330f26e92?auto=format&fit=crop&w=900&q=68"
+                 data-full="assets/images/repair-01.webp"
+                 data-full-fallback="https://images.unsplash.com/photo-1588515603068-adb330f26e92?auto=format&fit=crop&w=1600&q=75"
+                 alt="نمونه‌ای از فرآیند تعمیر موبایل" loading="lazy" decoding="async">
+            <span class="gallery-item__caption">02 / REPAIR</span>
+          </button>
+          <button type="button" class="gallery-item gallery-item--c reveal-item" data-category="tools" data-index="2">
+            <span class="gallery-item__fallback" aria-hidden="true">03</span>
+            <img src="assets/images/tools-01.webp"
+                 data-fallback="https://images.unsplash.com/photo-1563770660834-82b48f27ec9d?auto=format&fit=crop&w=900&q=68"
+                 data-full="assets/images/tools-01.webp"
+                 data-full-fallback="https://images.unsplash.com/photo-1563770660834-82b48f27ec9d?auto=format&fit=crop&w=1600&q=75"
+                 alt="ابزار تخصصی تعمیر موبایل" loading="lazy" decoding="async">
+            <span class="gallery-item__caption">03 / TOOLS</span>
+          </button>
+          <button type="button" class="gallery-item gallery-item--d reveal-item" data-category="repair" data-index="3">
+            <span class="gallery-item__fallback" aria-hidden="true">04</span>
+            <img src="assets/images/repair-02.webp"
+                 data-fallback="https://images.unsplash.com/photo-1684430598409-750ae3284704?auto=format&fit=crop&w=900&q=68"
+                 data-full="assets/images/repair-02.webp"
+                 data-full-fallback="https://images.unsplash.com/photo-1684430598409-750ae3284704?auto=format&fit=crop&w=1600&q=75"
+                 alt="نمای نزدیک از تعمیر برد موبایل" loading="lazy" decoding="async">
+            <span class="gallery-item__caption">04 / BOARD</span>
+          </button>
+          <button type="button" class="gallery-item gallery-item--e reveal-item" data-category="shop" data-index="4">
+            <span class="gallery-item__fallback" aria-hidden="true">05</span>
+            <img src="assets/images/shop-02.webp"
+                 data-fallback="https://images.unsplash.com/photo-1560846389-8c7e1d88eca8?auto=format&fit=crop&w=900&q=68"
+                 data-full="assets/images/shop-02.webp"
+                 data-full-fallback="https://images.unsplash.com/photo-1560846389-8c7e1d88eca8?auto=format&fit=crop&w=1600&q=75"
+                 alt="محیط کار کیان" loading="lazy" decoding="async">
+            <span class="gallery-item__caption">05 / WORKSHOP</span>
+          </button>
+          <button type="button" class="gallery-item gallery-item--f reveal-item" data-category="repair" data-index="5">
+            <span class="gallery-item__fallback" aria-hidden="true">06</span>
+            <img src="assets/images/repair-03.webp"
+                 data-fallback="https://images.unsplash.com/photo-1563770660834-82b48f27ec9d?auto=format&fit=crop&w=900&q=68"
+                 data-full="assets/images/repair-03.webp"
+                 data-full-fallback="https://images.unsplash.com/photo-1563770660834-82b48f27ec9d?auto=format&fit=crop&w=1600&q=75"
+                 alt="نمونه دیگر از تعمیرات موبایل" loading="lazy" decoding="async">
+            <span class="gallery-item__caption">06 / REPAIR</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOP / LOCATION -->
+    <section class="section workshop" id="location" aria-label="محل کار">
+      <div class="container workshop__grid">
+        <div class="workshop__image reveal-item">
+          <div class="workshop__fallback" aria-hidden="true">KIAN</div>
+          <img src="assets/images/workshop.webp"
+               data-fallback="https://images.unsplash.com/photo-1560846389-8c7e1d88eca8?auto=format&fit=crop&w=1200&q=70"
+               alt="نمای محل کار موبایل کیان" loading="lazy" decoding="async">
+          <div class="workshop__pin" aria-hidden="true"><i></i><span>مشهد</span></div>
+        </div>
+        <div class="workshop__copy">
+          <p class="eyebrow reveal-item">10 / LOCATION</p>
+          <h2 class="display-title reveal-item">فضای واقعی، <span>آدرس واقعی.</span></h2>
+          <p class="body-copy reveal-item">موبایل کیان با آدرس مشخص و ساعات کاری روشن در مشهد فعالیت می‌کند.</p>
+          <div class="address-card reveal-item">
+            <div>
+              <span>ADDRESS</span>
+              <strong>مشهد، رسالت ۶۴<br>قائم، قائم ۱۵</strong>
+            </div>
+            <a href="https://maps.google.com/?q=مشهد رسالت ۶۴ قائم ۱۵" target="_blank" rel="noopener" class="btn btn--small">مشاهده مسیر</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOURS / WARRANTY -->
+    <section class="hours-warranty" aria-label="ساعات کاری و ضمانت">
+      <div class="hours-warranty__grid">
+        <div class="hours-card">
+          <p class="eyebrow reveal-item">11 / HOURS</p>
+          <h2 class="reveal-item">ساعات فعالیت</h2>
+          <p class="reveal-item">هر روز هفته، در دو بازه زمانی پاسخگوی شما هستیم.</p>
+          <div class="hours-card__time reveal-item">
+            <strong>10:00 — 14:00</strong>
+            <strong>17:00 — 22:00</strong>
+          </div>
+          <div class="hours-card__status" id="liveStatus">
+            <span aria-hidden="true"></span>
+            <span id="liveStatusText">در حال بررسی ساعت فعالیت…</span>
+          </div>
+        </div>
+        <div class="warranty-card">
+          <p class="eyebrow reveal-item">12 / WARRANTY</p>
+          <h2 class="reveal-item">ضمانت باتری</h2>
+          <div class="warranty-card__big reveal-item">۰۶</div>
+          <div class="warranty-card__unit reveal-item">MONTHS</div>
+          <p class="reveal-item">باتری‌های تعویض‌شده دارای ۶ ماه ضمانت هستند.</p>
+          <small>سایر قطعات و خدمات تعویضی شامل ضمانت نیستند.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" aria-label="سوالات متداول">
+      <div class="container faq__grid">
+        <div>
+          <p class="eyebrow reveal-item">13 / FAQ</p>
+          <h2 class="display-title reveal-item">سوالات <span>متداول</span></h2>
+        </div>
+        <div class="faq-list" id="faqList">
+          <div class="faq-item">
+            <button type="button" aria-expanded="false" aria-controls="faqA1">
+              <span>آیا قبل از تعمیر دستگاه بررسی می‌شود؟</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-item__answer" id="faqA1"><p>بله؛ هر دستگاه پیش از تعمیر عیب‌یابی می‌شود تا راه‌حل دقیق مشخص شود.</p></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" aria-expanded="false" aria-controls="faqA2">
+              <span>هزینه تعمیر چگونه تعیین می‌شود؟</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-item__answer" id="faqA2"><p>هزینه پس از عیب‌یابی و بر اساس نوع ایراد و قطعه مورد نیاز اعلام می‌شود.</p></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" aria-expanded="false" aria-controls="faqA3">
+              <span>آیا باتری‌های تعویضی ضمانت دارند؟</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-item__answer" id="faqA3"><p>بله، باتری‌های تعویض‌شده دارای ۶ ماه ضمانت هستند. سایر قطعات و خدمات تعویضی شامل ضمانت نیستند.</p></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" aria-expanded="false" aria-controls="faqA4">
+              <span>گوشی‌های قدیمی هم تعمیر می‌شوند؟</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-item__answer" id="faqA4"><p>بله، در صورت وجود قطعه و امکان فنی، گوشی‌های قدیمی نیز بررسی و تعمیر می‌شوند.</p></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" aria-expanded="false" aria-controls="faqA5">
+              <span>برای مراجعه باید وقت بگیرم؟</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-item__answer" id="faqA5"><p>می‌توانید مستقیم مراجعه کنید یا پیش از آمدن با شماره کیان هماهنگ کنید.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-scene" id="contact" aria-label="تماس با کیان">
+      <div class="contact-scene__ambient" aria-hidden="true"></div>
+      <div class="container contact-scene__content">
+        <p class="eyebrow reveal-item" style="justify-content:center;">14 / CONTACT</p>
+        <h2 class="contact-scene__title reveal-item">موبایلتان به <span>مشکل خورده؟</span></h2>
+        <p class="contact-scene__lead reveal-item">
+          برای توضیح مشکل، دریافت راهنمایی اولیه یا هماهنگی مراجعه، مستقیماً با موبایل کیان در ارتباط باشید.
+        </p>
+        <a href="tel:+989036907733" class="contact-phone reveal-item">
+          <i aria-hidden="true">☎</i><span>0903 690 7733</span>
+        </a>
+
+        <div class="social-grid reveal-item" id="socialGrid">
+          <a class="social-action" href="tel:+989036907733">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><b>تماس</b></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="social-action social-action--whatsapp" href="https://wa.me/989036907733" target="_blank" rel="noopener">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><b>WhatsApp</b></span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <span class="social-action social-action--disabled" id="socialTelegram" data-social="telegram">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg><b>Telegram</b></span>
+            <span aria-hidden="true">—</span>
+          </span>
+          <span class="social-action social-action--disabled" id="socialRubika" data-social="rubika">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg><b>Rubika</b></span>
+            <span aria-hidden="true">—</span>
+          </span>
+          <span class="social-action social-action--disabled" id="socialEitaa" data-social="eitaa">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Eitaa</b></span>
+            <span aria-hidden="true">—</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" aria-label="دعوت به تماس نهایی">
+      <div class="final-cta__line" aria-hidden="true"></div>
+      <div class="container final-cta__inner">
+        <p class="eyebrow reveal-item" style="justify-content:center;">FINAL</p>
+        <h2 class="display-title reveal-item">
+          قبل از تعویض گوشی، یک بار برای <span>تعمیرش مشورت کنید.</span>
+        </h2>
+        <p class="body-copy reveal-item" style="text-align:center;">تماس مستقیم با موبایل کیان، سریع‌ترین راه برای شروع تعمیر است.</p>
+        <a href="tel:+989036907733" class="btn btn--primary btn--large reveal-item">
+          <span>تماس مستقیم</span><span class="btn__line" aria-hidden="true"></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <a href="#home" class="brand brand--footer" aria-label="کیان">
+          <span class="brand__mark" aria-hidden="true">K</span>
+          <span class="brand__word">KIAN</span>
+          <span class="brand__sub">MOBILE REPAIR</span>
+        </a>
+        <p>مشهد · قائم · رسالت ۶۴</p>
+      </div>
+      <nav class="footer__links" aria-label="ناوبری فوتر">
+        <a href="#services">خدمات</a>
+        <a href="#about">درباره</a>
+        <a href="#gallery">گالری</a>
+        <a href="#contact">تماس</a>
+        <button type="button" id="tourOpenBtn" style="text-align:start;padding:0;">راهنمای سریع سایت</button>
+      </nav>
+      <div class="footer__contact">
+        <a href="tel:+989036907733">۰۹۰۳ ۶۹۰ ۷۷۳۳</a>
+        <small>۱۰:۰۰–۱۴:۰۰ / ۱۷:۰۰–۲۲:۰۰</small>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="footerYear">2026</span> KIAN MOBILE REPAIR</span>
+      <span aria-hidden="true">·</span>
+      <span>MASHHAD, IRAN</span>
+      <button type="button" id="backToTop" aria-label="بازگشت به بالای صفحه">↑</button>
+    </div>
+  </footer>
+
+  <!-- FLOATING / STICKY CONTACT -->
+  <div class="mobile-contact-bar" id="mobileContactBar">
+    <a href="tel:+989036907733"><span aria-hidden="true">☎</span>تماس</a>
+    <a href="https://wa.me/989036907733" target="_blank" rel="noopener"><span aria-hidden="true">✆</span>WhatsApp</a>
+  </div>
+
+  <div class="floating-contact" id="floatingContact">
+    <div class="floating-contact__panel" id="floatingPanel">
+      <a href="tel:+989036907733">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        تماس مستقیم
+      </a>
+      <a href="https://wa.me/989036907733" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        واتس‌اپ
+      </a>
+      <span class="is-disabled" id="floatingTelegram" data-social="telegram">تلگرام (به‌زودی)</span>
+    </div>
+    <button type="button" id="floatingToggle" aria-expanded="false" aria-controls="floatingPanel" aria-label="راه‌های ارتباطی">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      تماس
+    </button>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="نمایش تصویر گالری">
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <div class="lightbox__dialog">
+      <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="تصویر قبلی">←</button>
+      <figure class="lightbox__figure" id="lightboxFigure">
+        <img id="lightboxImage" alt="">
+        <div class="lightbox__figure__fallback" id="lightboxFallback">تصویر در دسترس نیست</div>
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="تصویر بعدی">→</button>
+      <button type="button" class="lightbox__close" id="lightboxClose" aria-label="بستن">×</button>
+      <span class="lightbox__count" id="lightboxCount">01 / 06</span>
+    </div>
+  </div>
+
+  <!-- GUIDED TOUR -->
+  <div class="guided-tour" id="guidedTour" role="dialog" aria-modal="true" aria-labelledby="tourTitle">
+    <div class="guided-tour__backdrop" data-tour-close></div>
+    <div class="guided-tour__card">
+      <div class="guided-tour__progress"><span id="tourProgress"></span></div>
+      <p class="guided-tour__step" id="tourStep">01 / 04</p>
+      <h2 id="tourTitle">به کیان خوش آمدید</h2>
+      <p id="tourBody">در چند قدم کوتاه، سایت کیان را معرفی می‌کنیم.</p>
+      <div class="guided-tour__actions">
+        <button type="button" id="tourSkip">رد کردن</button>
+        <div>
+          <button type="button" id="tourPrev" disabled>قبلی</button>
+          <button type="button" id="tourNext" class="is-primary">بعدی</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
